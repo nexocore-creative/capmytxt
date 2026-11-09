@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>capmytxt – Free Capitalization Tool</title>
+  <meta name="description" content="Free, open-source text capitalization tool. Convert text to Title Case, Sentence case, UPPERCASE or lowercase instantly. Runs entirely in your browser.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>cap<span>my</span>txt</h1>
+      <p class="tagline">Fix text capitalization in one click. Free, private, and open source.</p>
+    </header>
+
+    <section class="tool" aria-label="Capitalization tool">
+      <div class="modes" role="radiogroup" aria-label="Capitalization style">
+        <button type="button" role="radio" data-mode="title" aria-checked="true">Title Case</button>
+        <button type="button" role="radio" data-mode="sentence" aria-checked="false">Sentence case</button>
+        <button type="button" role="radio" data-mode="upper" aria-checked="false">UPPERCASE</button>
+        <button type="button" role="radio" data-mode="lower" aria-checked="false">lowercase</button>
+      </div>
+
+      <div class="panes">
+        <label class="pane">
+          <span class="label">Your text</span>
+          <textarea id="input" placeholder="Type or paste your text here…" autofocus spellcheck="true"></textarea>
+        </label>
+        <div class="pane">
+          <span class="label" id="out-label">Result</span>
+          <textarea id="output" readonly aria-labelledby="out-label" placeholder="Your converted text appears here"></textarea>
+        </div>
+      </div>
+
+      <div class="bar">
+        <span id="stats" class="stats" aria-live="polite">0 words · 0 characters</span>
+        <div class="actions">
+          <button type="button" id="clear" class="ghost">Clear</button>
+          <button type="button" id="copy" class="primary">Copy result</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="notes">
+      <h2>How it works</h2>
+      <ul>
+        <li><strong>Title Case</strong> capitalizes major words and keeps small words (a, an, the, and, of, in, to…) lowercase unless they start or end the title or follow a colon.</li>
+        <li><strong>Sentence case</strong> capitalizes the first letter of each sentence and the pronoun "I".</li>
+        <li>Words with internal capitals, like iPhone or NASA, are left alone when your text is mixed case.</li>
+        <li>Everything runs in your browser. Your text is never uploaded.</li>
+      </ul>
+    </section>
+
+    <footer>
+      MIT licensed · <a href="https://github.com/nexocore-creative/capmytxt" rel="noopener">Source on GitHub</a>
+    </footer>
+  </main>
+
+  <script src="caps.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
